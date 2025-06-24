@@ -1,10 +1,14 @@
 # 1. Use the official Node.js image
-FROM node:18
+FROM node:22
 
 # 2. Create and set the working directory
 WORKDIR /app
 
 # 3. Copy all files from your project into the container
+COPY package*.json ./
+
+RUN npm install
+
 COPY . .
 
 # 4. Expose the port your app runs on
