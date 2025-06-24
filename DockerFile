@@ -1,0 +1,14 @@
+# 1. Use the official Node.js image
+FROM node:18
+
+# 2. Create and set the working directory
+WORKDIR /app
+
+# 3. Copy all files from your project into the container
+COPY . .
+
+# 4. Expose the port your app runs on
+EXPOSE 3000
+
+# 5. Command to run your server
+CMD ["node", "website.js"]
